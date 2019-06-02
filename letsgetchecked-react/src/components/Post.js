@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import Comments from './Comments';
+import AddComment from './AddComment';
 
 import './style.scss';
 
@@ -19,11 +20,10 @@ class Post extends React.Component {
     id = match.params.id;
   }
   componentDidMount() {
-   
     axios.get(`http://localhost:9001/posts/${id}`)
     .then(response => {
       this.setState({ post: response.data });
-      console.log(response.data);
+    //   console.log(response.data);
     })
     .catch(error => {
       console.log(error);
@@ -40,6 +40,7 @@ class Post extends React.Component {
         </div>
         <Link to="/">Home</Link>
         <div>
+            <AddComment />
             <Comments />
         </div>
       </div>
