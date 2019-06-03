@@ -11,7 +11,6 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/posts/:id" component={Post} />
-        <Route path="/comments/:postsId" component={Comments} />
       </Switch>
     </div>
   );

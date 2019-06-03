@@ -28,7 +28,7 @@ export default class AddComment extends Component {
     return (
       <div>
         <h1>Add comments</h1>
-        <form className="App" onSubmit={this.onSubmit}>
+        <form className="add" onSubmit={this.onSubmit}>
             <input value={this.state.comment} onChange={this.onChange} />
             <button>Submit</button>
         </form>

@@ -17,7 +17,7 @@ class Comments extends React.Component {
     axios.get(`http://localhost:9001/comments/?_expand=post`)
     .then(response => {
       this.setState({ comments: response.data });
-      console.log(response.data);
+      console.log( );
     })
     .catch(error => {
       console.log(error);

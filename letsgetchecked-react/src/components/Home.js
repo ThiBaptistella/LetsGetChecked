@@ -26,14 +26,17 @@ class Home extends React.Component {
     let {posts} = this.state;
     return (
       <div>
-        { posts.map((post, i) => {
+        { posts.sort((a) => new Date(a.posts) - new Date(a.posts)).reverse()
+        .map((post, i) => {
             return ( 
                 <div key={i} className="card">
                   <h1>{post.title}</h1>
-                  <p>{post.author}</p>
-                  <p>{post.publish_date}</p>
-                  <p>{post.description}</p>
-                  <Link to={`/posts/${post.id}`}>Read more</Link>
+                  <p><span>Author:</span> {post.author}</p>
+                  <p><span>Post on:</span> {post.publish_date}</p>
+                  <p><span>Description: </span>{post.description}</p>
+                  <div className="btn">
+                    <Link to={`/posts/${post.id}`}>Read more</Link>
+                  </div>
                 </div>
             )
           } 
